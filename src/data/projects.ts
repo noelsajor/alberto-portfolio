@@ -10,75 +10,115 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        slug: 'brand-identity-system',
-        name: 'Brand Identity System',
+        slug: 'boosted',
+        name: 'Boosted',
         type: 'Branding',
         role: 'Art Direction + Design',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-1.png'
+        summary: 'Brand identity and visual language for Boosted.',
+        image: '/projects/Boosted.png'
     },
     {
-        slug: 'pop-art-collection',
-        name: 'Pop Art Collection',
+        slug: 'caribombo',
+        name: 'Caribombo',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Visual identity design for Caribombo.',
+        image: '/projects/Caribombo.png'
+    },
+    {
+        slug: 'diamonds',
+        name: 'Diamonds',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Identity and branding for Diamonds.',
+        image: '/projects/Diamonds.png'
+    },
+    {
+        slug: 'fake-cover-day',
+        name: 'Fake Cover Day',
         type: 'Illustration',
-        role: 'Illustration + Creative',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-2.png'
+        role: 'Art Direction + Design',
+        summary: 'Design and illustration for Fake Cover Day.',
+        image: '/projects/Fake Cover Day.png'
     },
     {
-        slug: 'sticker-pack-design',
-        name: 'Sticker Pack Design',
-        type: 'Sticker Pack',
-        role: 'Design + Production',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-3.png'
+        slug: 'la-lechona',
+        name: 'La lechona',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Branding and identity for La lechona.',
+        image: '/projects/La lechona.png'
     },
     {
-        slug: 'coffee-brand-packaging',
-        name: 'Coffee Brand Packaging',
+        slug: 'louder',
+        name: 'Louder',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Visual identity for Louder.',
+        image: '/projects/Louder.png'
+    },
+    {
+        slug: 'misa-afro',
+        name: 'Misa Afro',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Cultural project branding for Misa Afro.',
+        image: '/projects/Misa Afro.png'
+    },
+    {
+        slug: 'mito-y-comadre',
+        name: 'Mito y comadre',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Identity design for Mito y comadre.',
+        image: '/projects/Mito y comadre.png'
+    },
+    {
+        slug: 'mon-rivera',
+        name: 'Mon rivera',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Tribute branding for Mon rivera.',
+        image: '/projects/Mon rivera.png'
+    },
+    {
+        slug: 'nuud-bites',
+        name: 'Nuud Bites',
         type: 'Packaging',
-        role: 'Branding + Packaging',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-4.png'
+        role: 'Art Direction + Design',
+        summary: 'Packaging design for Nuud Bites.',
+        image: '/projects/Nuud Bites.png'
     },
     {
-        slug: 'character-design',
-        name: 'Character Design',
-        type: 'Character',
-        role: '3D + Character Design',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-5.png'
+        slug: 'rincon',
+        name: 'Rincon',
+        type: 'Branding',
+        role: 'Art Direction + Design',
+        summary: 'Identity and design for Rincon.',
+        image: '/projects/Rincon.png'
     },
     {
-        slug: 'motion-graphics',
-        name: 'Motion Graphics',
-        type: 'Motion',
-        role: 'Motion + Effects',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-6.png'
+        slug: 'sticker',
+        name: 'Sticker',
+        type: 'Sticker Pack',
+        role: 'Art Direction + Design',
+        summary: 'Sticker design and production.',
+        image: '/projects/Sticker .png'
     },
     {
-        slug: 'product-packaging',
-        name: 'Product Packaging',
-        type: 'Product',
-        role: 'Design + Photography',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-7.png'
+        slug: 'gig-posters',
+        name: 'gig Posters',
+        type: 'Illustration',
+        role: 'Art Direction + Design',
+        summary: 'Poster design and illustration.',
+        image: '/projects/gig Posters.png'
     },
     {
-        slug: 'street-art-mural',
-        name: 'Street Art Mural',
-        type: 'Street Art',
-        role: 'Art Direction + Mural',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-8.png'
-    },
-    {
-        slug: 'visual-identity',
-        name: 'Visual Identity',
+        slug: 'saavy',
+        name: 'saavy',
         type: 'Identity',
-        role: 'Creative Direction',
-        summary: 'Lorem Ipsum Dolor Sit Amet',
-        image: '/projects/project-9.png'
+        role: 'Art Direction + Design',
+        summary: 'Identity design for saavy.',
+        image: '/projects/saavy.png'
     }
 ]
