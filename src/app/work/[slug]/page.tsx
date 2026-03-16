@@ -1,25 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-
-import { mdxComponents } from '@/components/mdx/mdx-components'
-import { getCaseStudyBySlug, getCaseStudySlugs } from '@/lib/mdx'
 import { projects } from '@/data/projects'
+import { CaseStudyGrid } from '@/components/CaseStudyGrid'
 
 export function generateStaticParams() {
-    const mdxSlugs = getCaseStudySlugs().map((slug) => ({ slug }))
-    const projectSlugs = projects.map((p) => ({ slug: p.slug }))
-
-    // Merge both, deduplicate
-    const allSlugs = new Map<string, { slug: string }>()
-    for (const s of [...mdxSlugs, ...projectSlugs]) {
-        allSlugs.set(s.slug, s)
-    }
-    return Array.from(allSlugs.values())
+    return projects.map((p) => ({ slug: p.slug }))
 }
 
 export default async function CaseStudyPage({
@@ -28,59 +14,78 @@ export default async function CaseStudyPage({
     params: Promise<{ slug: string }>
 }) {
     const { slug } = await params
-
-    const data = getCaseStudyBySlug(slug)
     const project = projects.find((p) => p.slug === slug)
 
-    if (!data && !project) return notFound()
+    if (!project) return notFound()
 
     return (
-        <div className="mx-auto max-w-6xl px-6 py-16 space-y-10">
-            <Link href="/work" className="text-sm font-semibold text-dark/70 hover:text-dark">
-                ← Back to work
-            </Link>
+        <main className="mx-auto max-w-6xl px-6 py-12">
+            {/* Hero Splash */}
+            <section className="mb-12 overflow-hidden rounded-[40px]">
+                <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={1200}
+                    height={600}
+                    className="w-full object-cover aspect-[2/1]"
+                    priority
+                />
+            </section>
 
-            <header className="space-y-4">
-                <p className="text-xs font-semibold tracking-wide text-dark/50 uppercase">
-                    {data?.frontmatter.type ?? project?.type ?? 'Case Study'}
-                </p>
-                <h1 className="text-3xl font-black tracking-tight uppercase md:text-4xl">
-                    {data?.frontmatter.title ?? project?.name}
-                </h1>
-                {(data?.frontmatter.role ?? project?.role) && (
-                    <p className="text-dark/70">{data?.frontmatter.role ?? project?.role}</p>
-                )}
-                {(data?.frontmatter.summary ?? project?.summary) && (
-                    <p className="max-w-2xl text-dark/70">{data?.frontmatter.summary ?? project?.summary}</p>
-                )}
-            </header>
-
-            {project && (
-                <div className="max-w-lg">
-                    <Image
-                        src={project.image}
-                        alt={project.name}
-                        width={600}
-                        height={600}
-                        className="w-full rounded-xl"
-                    />
+            {/* Header / Intro */}
+            <section className="mb-20">
+                <div className="max-w-4xl">
+                    <h1 className="text-5xl font-black tracking-tight uppercase md:text-7xl lg:text-8xl">
+                        {project.name}
+                    </h1>
+                    
+                    <div className="mt-8 space-y-8">
+                        <p className="text-xl font-bold leading-tight md:text-2xl">
+                            {project.summary}
+                        </p>
+                        
+                        <div className="text-lg leading-relaxed text-dark/80 whitespace-pre-wrap">
+                            {project.description}
+                        </div>
+                    </div>
                 </div>
-            )}
 
-            {data && (
-                <article className="prose max-w-none">
-                    <MDXRemote
-                        source={data.content}
-                        components={mdxComponents}
-                        options={{
-                            mdxOptions: {
-                                remarkPlugins: [remarkGfm],
-                                rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]
-                            }
-                        }}
-                    />
-                </article>
-            )}
-        </div>
+                {/* Metadata Row */}
+                <div className="mt-16 grid grid-cols-2 gap-8 border-t border-dark/10 pt-10 md:grid-cols-4">
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Client</p>
+                        <p className="text-sm font-medium">{project.client ?? 'N/A'}</p>
+                    </div>
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Industry</p>
+                        <p className="text-sm font-medium">{project.industry ?? 'N/A'}</p>
+                    </div>
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Year</p>
+                        <p className="text-sm font-medium">{project.year ?? 'N/A'}</p>
+                    </div>
+                    <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Creative Work</p>
+                        <ul className="text-sm font-medium">
+                            {project.creativeWork?.map((work, i) => (
+                                <li key={i}>{work}</li>
+                            )) ?? <li>{project.role}</li>}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            {/* Project Grid */}
+            <section className="mb-20">
+                <CaseStudyGrid images={project.detailImages} />
+            </section>
+
+            {/* Back Button */}
+            <div className="pb-20">
+                <Link href="/work" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider hover:text-accent">
+                    ← Back to all projects
+                </Link>
+            </div>
+        </main>
     )
 }

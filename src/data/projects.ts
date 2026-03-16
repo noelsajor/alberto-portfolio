@@ -4,8 +4,13 @@ export type Project = {
     type: 'Branding' | 'Illustration' | 'Sticker Pack' | 'Packaging' | 'Character' | 'Motion' | 'Product' | 'Street Art' | 'Identity'
     role: string
     summary: string
+    description?: string
     image: string
     year?: string
+    client?: string
+    industry?: string
+    creativeWork?: string[]
+    detailImages?: string[]
 }
 
 export const projects: Project[] = [
@@ -119,6 +124,27 @@ export const projects: Project[] = [
         type: 'Identity',
         role: 'Art Direction + Design',
         summary: 'Identity design for saavy.',
-        image: '/projects/saavy.png'
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        image: '/projects/saavy.png',
+        year: '2025',
+        client: 'Lorem ipsum',
+        industry: 'Lorem',
+        creativeWork: ['Lorem ipsum', 'Lorem ipsum dolor', 'Lorem'],
+        detailImages: [
+            '/projects/saavy.png',
+            '/projects/Louder.png',
+            '/projects/Boosted.png',
+            '/projects/Caribombo.png',
+            '/projects/Diamonds.png',
+            '/projects/Fake Cover Day.png',
+            '/projects/La lechona.png',
+            '/projects/Misa Afro.png',
+            '/projects/Mito y comadre.png',
+            '/projects/Mon rivera.png',
+            '/projects/Nuud Bites.png',
+            '/projects/Rincon.png',
+            '/projects/Sticker .png',
+            '/projects/gig Posters.png'
+        ]
     }
 ]
