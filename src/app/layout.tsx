@@ -5,7 +5,10 @@ import { SiteFooter } from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
   title: 'Alberto Olivero — Hybrid Creative Direction',
-  description: 'Hybrid Creative Direction & Visual Strategy for Purpose-Driven Brands.'
+  description: 'Hybrid Creative Direction & Visual Strategy for Purpose-Driven Brands.',
+  icons: {
+    icon: '/avatar.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
