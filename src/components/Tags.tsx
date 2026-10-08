@@ -1,4 +1,7 @@
-/* Shared Services / Industries chips, used on the home intro and the About page. */
+import Link from 'next/link'
+import { tagSlug } from '@/lib/tags'
+
+/* Shared Services / Industries chips. Each chip links to the filtered Work page. */
 
 export const services: { label: string; color: string }[] = [
     { label: 'Brand Design', color: 'bg-tag-green' },
@@ -25,31 +28,59 @@ export const industries = [
     'E-Commerce'
 ]
 
-export function ServiceTags() {
+export function serviceHref(label: string) {
+    return `/work?service=${tagSlug(label)}`
+}
+
+export function industryHref(label: string) {
+    return `/work?industry=${tagSlug(label)}`
+}
+
+type TagProps = { label: string; href: string; color: string; active?: boolean; dimmed?: boolean }
+
+export function Tag({ label, href, color, active, dimmed }: TagProps) {
+    return (
+        <Link
+            href={href}
+            aria-current={active ? 'page' : undefined}
+            className={['chip', color, active ? 'chip-active' : '', dimmed ? 'chip-dimmed' : ''].join(' ')}
+        >
+            {label}
+        </Link>
+    )
+}
+
+export function ServiceTags({ active, heading = 'Services' }: { active?: string; heading?: string }) {
     return (
         <div className="space-y-3">
-            <h2 className="text-sm font-bold">Services</h2>
-            <ul className="flex flex-wrap gap-2">
-                {services.map((s) => (
-                    <li key={s.label} className={`chip ${s.color}`}>
-                        {s.label}
-                    </li>
-                ))}
+            <h2 className="text-base font-bold">{heading}</h2>
+            <ul className="flex flex-wrap gap-2.5">
+                {services.map((s) => {
+                    const slug = tagSlug(s.label)
+                    return (
+                        <li key={s.label}>
+                            <Tag label={s.label} href={serviceHref(s.label)} color={s.color} active={active === slug} dimmed={!!active && active !== slug} />
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )
 }
 
-export function IndustryTags() {
+export function IndustryTags({ active, heading = 'Industries' }: { active?: string; heading?: string }) {
     return (
         <div className="space-y-3">
-            <h2 className="text-sm font-bold">Industries</h2>
-            <ul className="flex flex-wrap gap-2">
-                {industries.map((i) => (
-                    <li key={i} className="chip bg-[#FFF4CF]">
-                        {i}
-                    </li>
-                ))}
+            <h2 className="text-base font-bold">{heading}</h2>
+            <ul className="flex flex-wrap gap-2.5">
+                {industries.map((i) => {
+                    const slug = tagSlug(i)
+                    return (
+                        <li key={i}>
+                            <Tag label={i} href={industryHref(i)} color="bg-[#FFF4CF]" active={active === slug} dimmed={!!active && active !== slug} />
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

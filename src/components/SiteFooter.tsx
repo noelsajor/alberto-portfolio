@@ -3,7 +3,7 @@ import { SocialLinks } from '@/components/icons/SocialIcons'
 import { LogoMark } from '@/components/Logo'
 
 const nav = [
-    { href: '/work', label: 'work' },
+    { href: '/work', label: 'Work' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' }
 ]
@@ -21,7 +21,7 @@ export function SiteFooter() {
                     together
                 </h2>
                 <div className="mt-8">
-                    <Link href="/#contact" className="btn-accent text-sm px-5 py-2.5">
+                    <Link href="/#contact" className="btn-accent btn-on-dark">
                         Lets Talk! &gt;
                     </Link>
                 </div>
@@ -32,13 +32,13 @@ export function SiteFooter() {
                 <Link href="/" className="inline-flex items-center text-accent" aria-label="Papashongo, home">
                     <LogoMark className="h-6 w-auto md:h-7" />
                 </Link>
-                <div className="flex flex-wrap items-center gap-6">
+                <div className="flex flex-wrap items-center gap-8">
                     {nav.map((item, i) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             className={[
-                                'text-sm transition hover:text-white',
+                                'text-lg transition hover:text-white',
                                 i === 0 ? 'font-bold text-white' : 'font-medium text-white/60'
                             ].join(' ')}
                         >

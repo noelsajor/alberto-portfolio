@@ -43,7 +43,7 @@ export function ContactForm() {
                 <textarea id="message" name="message" rows={6} required className="field resize-y" />
             </div>
             <div className="flex items-center gap-4">
-                <button type="submit" className="btn-accent bg-[#FFF4CF] px-6 py-2.5 text-sm">
+                <button type="submit" className="btn-accent">
                     Send Message
                 </button>
                 {sent ? <p className="text-xs text-dark/70">Opening your mail app…</p> : null}

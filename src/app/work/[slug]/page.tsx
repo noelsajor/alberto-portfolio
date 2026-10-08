@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { projects } from '@/data/projects'
 import { CaseStudyGallery } from '@/components/CaseStudyGallery'
 import { ProjectCard } from '@/components/ProjectCard'
-import { serviceColor } from '@/components/Tags'
+import { Tag, serviceColor, serviceHref, industryHref } from '@/components/Tags'
 
 export function generateStaticParams() {
     return projects.map((p) => ({ slug: p.slug }))
@@ -67,7 +67,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         <div>
                             <dt className="mb-2 text-sm font-bold">Industry</dt>
                             <dd>
-                                <span className="chip bg-[#FFF4CF]">{project.industry}</span>
+                                <Tag label={project.industry} href={industryHref(project.industry)} color="bg-[#FFF4CF]" />
                             </dd>
                         </div>
                     ) : null}
@@ -81,9 +81,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                         <dt className="mb-2 text-sm font-bold">Creative Work</dt>
                         <dd className="flex flex-wrap gap-2">
                             {(project.creativeWork ?? [project.role]).map((w) => (
-                                <span key={w} className={`chip ${serviceColor(w)}`}>
-                                    {w}
-                                </span>
+                                <Tag key={w} label={w} href={serviceHref(w)} color={serviceColor(w)} />
                             ))}
                         </dd>
                     </div>

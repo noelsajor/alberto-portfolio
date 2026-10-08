@@ -7,7 +7,7 @@ import { Logo } from '@/components/Logo'
 import { SocialLinks } from '@/components/icons/SocialIcons'
 
 const nav = [
-    { href: '/work', label: 'work' },
+    { href: '/work', label: 'Work' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' }
 ]
@@ -21,7 +21,7 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
             href={href}
             onClick={onClick}
             className={[
-                'text-sm transition-colors',
+                'text-lg transition-colors',
                 active ? 'font-bold text-dark' : 'font-medium text-dark/60 hover:text-dark'
             ].join(' ')}
         >
@@ -45,7 +45,7 @@ export function SiteHeader() {
                 <Logo />
 
                 {/* Desktop nav */}
-                <nav className="hidden items-center gap-7 md:flex">
+                <nav className="hidden items-center gap-9 md:flex">
                     {nav.map((item) => (
                         <NavLink key={item.href} href={item.href} label={item.label} />
                     ))}
@@ -53,7 +53,7 @@ export function SiteHeader() {
 
                 <div className="hidden items-center gap-5 md:flex">
                     <SocialLinks />
-                    <Link href="/#contact" className="btn-accent">
+                    <Link href="/#contact" className="btn-accent btn-sm">
                         Lets Start Your Project
                     </Link>
                 </div>
@@ -78,7 +78,7 @@ export function SiteHeader() {
                             <NavLink key={item.href} href={item.href} label={item.label} onClick={() => setOpen(false)} />
                         ))}
                         <SocialLinks />
-                        <Link href="/#contact" onClick={() => setOpen(false)} className="btn-accent w-fit">
+                        <Link href="/#contact" onClick={() => setOpen(false)} className="btn-accent btn-sm w-fit">
                             Lets Start Your Project
                         </Link>
                     </div>
