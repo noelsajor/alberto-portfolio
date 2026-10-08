@@ -1,23 +1,5 @@
 import Image from 'next/image'
-
-const services: { label: string; color: string }[] = [
-    { label: 'Brand Design', color: 'bg-tag-yellow' },
-    { label: 'Illustration', color: 'bg-tag-pink' },
-    { label: 'Packaging', color: 'bg-tag-green' },
-    { label: 'Motion Design', color: 'bg-tag-blue' },
-    { label: 'Web Design', color: 'bg-tag-orange' },
-    { label: 'Creative Direction', color: 'bg-tag-purple' }
-]
-
-const industries = [
-    'Music & Culture',
-    'Tech / SaaS',
-    'Food & Beverage',
-    'Cannabis',
-    'Retail',
-    'Streetwear & Apparel',
-    'E-Commerce'
-]
+import { ServiceTags, IndustryTags } from '@/components/Tags'
 
 export function Intro() {
     return (
@@ -37,28 +19,8 @@ export function Intro() {
                         stand out. It needs attitude. I combine strategic art direction with vibrant illustration and a
                         distinct cultural voice to build visual ecosystems that demand attention.
                     </p>
-
-                    <div className="space-y-3">
-                        <h2 className="text-sm font-bold">Services</h2>
-                        <ul className="flex flex-wrap gap-2">
-                            {services.map((s) => (
-                                <li key={s.label} className={`chip ${s.color}`}>
-                                    {s.label}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="space-y-3">
-                        <h2 className="text-sm font-bold">Industries</h2>
-                        <ul className="flex flex-wrap gap-2">
-                            {industries.map((i) => (
-                                <li key={i} className="chip bg-transparent">
-                                    {i}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ServiceTags />
+                    <IndustryTags />
                 </div>
             </div>
         </section>

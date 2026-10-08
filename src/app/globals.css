@@ -7,12 +7,13 @@
   --color-muted: #6B6B66;
   --color-border: #E5E3DD;
   /* Tag palette (Services chips) */
-  --color-tag-yellow: #E3EE45;
-  --color-tag-pink: #F7A8C4;
-  --color-tag-green: #9FE1A4;
-  --color-tag-blue: #9FD0F5;
-  --color-tag-orange: #F9B36B;
-  --color-tag-purple: #C9A8F5;
+  --color-tag-green: #8FE38F;
+  --color-tag-orange: #F4B548;
+  --color-tag-teal: #5DEFC4;
+  --color-tag-blue: #6FC4F6;
+  --color-tag-pink: #F37DE3;
+  --color-tag-red: #F56A62;
+  --color-tag-purple: #B38BF5;
   --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
   --font-display: var(--font-archivo-black), var(--font-archivo), Impact, sans-serif;
 }
