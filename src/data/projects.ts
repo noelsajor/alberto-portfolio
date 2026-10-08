@@ -1,16 +1,27 @@
+/** One gallery block: a single full-width image, or a row of images shown side by side. */
+export type GalleryItem = string | string[]
+
 export type Project = {
     slug: string
     name: string
     type: 'Branding' | 'Illustration' | 'Sticker Pack' | 'Packaging' | 'Character' | 'Motion' | 'Product' | 'Street Art' | 'Identity'
     role: string
+    /** One-line description shown on cards. */
     summary: string
-    description?: string
-    image: string
-    year?: string
+    /** Card label, e.g. "NUUD Pleasures LLC". Falls back to name. */
     client?: string
+    /** Case study headline. Falls back to name. */
+    title?: string
+    /** Case study body; blank lines separate paragraphs. */
+    description?: string
+    /** Square thumbnail for cards. */
+    image: string
+    /** Wide hero for the case study page. Falls back to image. */
+    hero?: string
+    year?: string
     industry?: string
     creativeWork?: string[]
-    detailImages?: string[]
+    gallery?: GalleryItem[]
 }
 
 export const projects: Project[] = [
@@ -91,12 +102,32 @@ export const projects: Project[] = [
     },
     {
         slug: 'nuud-bites',
-        name: 'Nuud Bites',
+        name: 'Nuud Exotics',
         type: 'Packaging',
-        role: 'Art Direction + Design',
+        role: 'Creative Direction + Illustration',
         client: 'NUUD Pleasures LLC',
+        title: 'Packaging for Pre Rolls NUUD Exotic',
         summary: 'Collectible Packaging For NUUD Exotics',
-        image: '/projects/nuud-bites.webp'
+        description:
+            'Nuud Pleasures needed a standout presence for a special edition product line launched exclusively for the Exxxotica Expo 2023 convention, where the brand was featured as an official exhibitor. They brought me on for full creative direction of a limited edition Delta 9 pre roll line. The system spans four SKUs, Gush Mintz, Runtz, Sour Diesel, and Medallin, each carrying its own unique color personality while sharing one cohesive illustrated concept.\n\n' +
+            'The visual core is a face wearing sunglasses that reflect the product info, lips holding a lit joint, and a recurring diamond motif tied directly to the formula\'s Liquid Diamond feature. The result is a collection built to stand out on the shelf, designed to be collected rather than just consumed.\n\n' +
+            'I led the full system, from the initial illustrated concept through final production across all four cans, making sure every variation held up on its own and as part of the complete set.',
+        image: '/projects/nuud-bites.webp',
+        hero: '/projects/nuud-bites/hero.webp',
+        year: '2025',
+        industry: 'Cannabis',
+        creativeWork: ['Graphic Design', 'Illustration', 'Creative Direction'],
+        gallery: [
+            '/projects/nuud-bites/lineup.webp',
+            '/projects/nuud-bites/lids.webp',
+            '/projects/nuud-bites/pattern.webp',
+            '/projects/nuud-bites/row-1.webp',
+            '/projects/nuud-bites/row-2.webp',
+            '/projects/nuud-bites/row-3.webp',
+            '/projects/nuud-bites/row-4.webp',
+            ['/projects/nuud-bites/label-gush-mintz.webp', '/projects/nuud-bites/label-medallin.webp'],
+            ['/projects/nuud-bites/label-sour-diesel.webp', '/projects/nuud-bites/label-runtz.webp']
+        ]
     },
     {
         slug: 'rincon',
@@ -129,26 +160,6 @@ export const projects: Project[] = [
         role: 'Art Direction + Design',
         client: 'Saavy Defi LLC',
         summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        image: '/projects/saavy.webp',
-        year: '2025',
-        industry: 'Lorem',
-        creativeWork: ['Lorem ipsum', 'Lorem ipsum dolor', 'Lorem'],
-        detailImages: [
-            '/projects/saavy.webp',
-            '/projects/louder.webp',
-            '/projects/boosted.webp',
-            '/projects/caribombo.webp',
-            '/projects/diamonds.webp',
-            '/projects/fake-cover-day.webp',
-            '/projects/la-lechona.webp',
-            '/projects/misa-afro.webp',
-            '/projects/mito-y-comadre.webp',
-            '/projects/mon-rivera.webp',
-            '/projects/nuud-bites.webp',
-            '/projects/rincon.webp',
-            '/projects/sticker.webp',
-            '/projects/gig-posters.webp'
-        ]
+        image: '/projects/saavy.webp'
     }
 ]

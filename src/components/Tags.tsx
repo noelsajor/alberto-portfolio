@@ -10,6 +10,11 @@ export const services: { label: string; color: string }[] = [
     { label: 'Graphic Design', color: 'bg-tag-purple' }
 ]
 
+/** Chip color for a service label; outlined cream when unknown. */
+export function serviceColor(label: string) {
+    return services.find((s) => s.label.toLowerCase() === label.toLowerCase())?.color ?? 'bg-[#FFF4CF]'
+}
+
 export const industries = [
     'Music & Culture',
     'Tech / SaaS',

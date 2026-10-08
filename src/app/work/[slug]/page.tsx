@@ -1,91 +1,125 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { projects } from '@/data/projects'
-import { CaseStudyGrid } from '@/components/CaseStudyGrid'
+import { CaseStudyGallery } from '@/components/CaseStudyGallery'
+import { ProjectCard } from '@/components/ProjectCard'
+import { serviceColor } from '@/components/Tags'
 
 export function generateStaticParams() {
     return projects.map((p) => ({ slug: p.slug }))
 }
 
-export default async function CaseStudyPage({
-    params
-}: {
-    params: Promise<{ slug: string }>
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params
     const project = projects.find((p) => p.slug === slug)
+    if (!project) return {}
+    return {
+        title: `${project.title ?? project.name} — Papashongo`,
+        description: project.summary
+    }
+}
 
+/** Up to three other projects: same type first, then the rest in catalogue order. */
+function relatedTo(slug: string, type: string) {
+    const others = projects.filter((p) => p.slug !== slug)
+    return [...others.filter((p) => p.type === type), ...others.filter((p) => p.type !== type)].slice(0, 3)
+}
+
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const project = projects.find((p) => p.slug === slug)
     if (!project) return notFound()
 
+    const paragraphs = (project.description ?? '').split(/\n\s*\n/).filter(Boolean)
+    const related = relatedTo(project.slug, project.type)
+
     return (
-        <main className="mx-auto max-w-6xl px-6 py-12">
-            {/* Hero Splash */}
-            <section className="mb-12 overflow-hidden rounded-[40px]">
+        <article className="mx-auto max-w-6xl px-6 pt-8 pb-24 md:pt-12">
+            {/* Hero */}
+            <div className="overflow-hidden border-[1.5px] border-dark bg-[#E5E3DD]">
                 <Image
-                    src={project.image}
+                    src={project.hero ?? project.image}
                     alt={project.name}
-                    width={1200}
-                    height={600}
-                    className="w-full object-cover aspect-[2/1]"
+                    width={1600}
+                    height={700}
+                    sizes="(min-width: 1152px) 1104px, 100vw"
+                    className="aspect-[16/9] w-full object-cover md:aspect-[2.3/1]"
                     priority
                 />
-            </section>
+            </div>
 
-            {/* Header / Intro */}
-            <section className="mb-20">
-                <div className="max-w-4xl">
-                    <h1 className="text-5xl font-black tracking-tight uppercase md:text-7xl lg:text-8xl">
-                        {project.name}
-                    </h1>
-                    
-                    <div className="mt-8 space-y-8">
-                        <p className="text-xl font-bold leading-tight md:text-2xl">
-                            {project.summary}
-                        </p>
-                        
-                        <div className="text-lg leading-relaxed text-dark/80 whitespace-pre-wrap">
-                            {project.description}
+            {/* Title */}
+            <header className="mt-10 md:mt-14">
+                {project.client ? (
+                    <p className="text-xs font-bold uppercase tracking-wide text-dark/80 md:text-sm">{project.client}</p>
+                ) : null}
+                <h1 className="display mt-3 max-w-4xl text-4xl sm:text-5xl md:text-[3.4rem] lg:text-[4rem]">
+                    {project.title ?? project.name}
+                </h1>
+            </header>
+
+            {/* Meta + description */}
+            <section className="mt-10 grid grid-cols-1 gap-10 md:mt-14 md:grid-cols-[1fr_2fr] md:gap-16 lg:grid-cols-[1fr_1.6fr]">
+                <dl className="space-y-7">
+                    {project.industry ? (
+                        <div>
+                            <dt className="mb-2 text-sm font-bold">Industry</dt>
+                            <dd>
+                                <span className="chip bg-[#FFF4CF]">{project.industry}</span>
+                            </dd>
                         </div>
+                    ) : null}
+                    {project.year ? (
+                        <div>
+                            <dt className="mb-1 text-sm font-bold">Year</dt>
+                            <dd className="text-sm">{project.year}</dd>
+                        </div>
+                    ) : null}
+                    <div>
+                        <dt className="mb-2 text-sm font-bold">Creative Work</dt>
+                        <dd className="flex flex-wrap gap-2">
+                            {(project.creativeWork ?? [project.role]).map((w) => (
+                                <span key={w} className={`chip ${serviceColor(w)}`}>
+                                    {w}
+                                </span>
+                            ))}
+                        </dd>
                     </div>
-                </div>
+                </dl>
 
-                {/* Metadata Row */}
-                <div className="mt-16 grid grid-cols-2 gap-8 border-t border-dark/10 pt-10 md:grid-cols-4">
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Client</p>
-                        <p className="text-sm font-medium">{project.client ?? 'N/A'}</p>
-                    </div>
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Industry</p>
-                        <p className="text-sm font-medium">{project.industry ?? 'N/A'}</p>
-                    </div>
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Year</p>
-                        <p className="text-sm font-medium">{project.year ?? 'N/A'}</p>
-                    </div>
-                    <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-dark/50 mb-2">Creative Work</p>
-                        <ul className="text-sm font-medium">
-                            {project.creativeWork?.map((work, i) => (
-                                <li key={i}>{work}</li>
-                            )) ?? <li>{project.role}</li>}
-                        </ul>
-                    </div>
+                <div className="max-w-xl space-y-5 text-sm leading-relaxed text-dark/80 md:text-base">
+                    {paragraphs.length > 0 ? paragraphs.map((t, i) => <p key={i}>{t}</p>) : <p>{project.summary}</p>}
                 </div>
             </section>
 
-            {/* Project Grid */}
-            <section className="mb-20">
-                <CaseStudyGrid images={project.detailImages} />
-            </section>
+            {/* Gallery */}
+            {project.gallery?.length ? (
+                <section className="mt-14 md:mt-20" aria-label="Project gallery">
+                    <CaseStudyGallery items={project.gallery} projectName={project.name} />
+                </section>
+            ) : null}
 
-            {/* Back Button */}
-            <div className="pb-20">
-                <Link href="/work" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider hover:text-accent">
+            {/* Related */}
+            {related.length > 0 ? (
+                <section className="mt-20 md:mt-28" aria-labelledby="related-heading">
+                    <h2 id="related-heading" className="display text-3xl md:text-4xl">
+                        You might also like
+                    </h2>
+                    <div className="project-grid mt-8">
+                        {related.map((p) => (
+                            <ProjectCard key={p.slug} project={p} />
+                        ))}
+                    </div>
+                </section>
+            ) : null}
+
+            <div className="mt-16">
+                <Link href="/work" className="text-sm font-bold uppercase tracking-wide hover:underline">
                     ← Back to all projects
                 </Link>
             </div>
-        </main>
+        </article>
     )
 }
