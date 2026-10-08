@@ -1,5 +1,8 @@
-/** One gallery block: a single full-width image, or a row of images shown side by side. */
-export type GalleryItem = string | string[]
+/** Full-width autoplaying (muted, looping) video block. */
+export type GalleryVideo = { video: string; poster?: string }
+
+/** One gallery block: a full-width image, a row of images shown side by side, or a video. */
+export type GalleryItem = string | string[] | GalleryVideo
 
 export type Project = {
     slug: string
@@ -37,10 +40,29 @@ export const projects: Project[] = [
         slug: 'caribombo',
         name: 'Caribombo',
         type: 'Branding',
-        role: 'Art Direction + Design',
+        role: 'Creative Direction + Graphic Design',
         client: 'Caribombo - Carlos Guillen',
+        title: 'Visual Identity & Press Kit for WOMEX 2023 Selection',
         summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
-        image: '/projects/caribombo.webp'
+        description:
+            'Carlos Guillén, known as Caribombo, was selected to represent Venezuela and Colombia at WOMEX 2023, the leading global platform for world music. Rooted in Gaita de Tambora and Afro-Venezuelan and Afro-Colombian tradition, he needed a visual identity that communicated that before the first note played.\n\n' +
+            'I designed his logo, a compact press kit, and business cards for networking at the event. The wordmark blends playful geometric shapes with a vibrant tropical palette of yellow, green, magenta, and blue, translating the rhythm and joy of his music into visual language.',
+        image: '/projects/caribombo.webp',
+        hero: '/projects/caribombo/hero.webp',
+        year: '2023',
+        industry: 'Music & Culture',
+        creativeWork: ['Graphic Design', 'Illustration', 'Creative Direction'],
+        gallery: [
+            '/projects/caribombo/wordmark.webp',
+            ['/projects/caribombo/poster.webp', '/projects/caribombo/hero.webp'],
+            '/projects/caribombo/business-cards.webp',
+            '/projects/caribombo/palette.webp',
+            '/projects/caribombo/pattern.webp',
+            ['/projects/caribombo/trifold-folded.webp', '/projects/caribombo/portrait.webp'],
+            '/projects/caribombo/trifold-front.webp',
+            '/projects/caribombo/trifold-back.webp',
+            '/projects/caribombo/trifold-stack.webp'
+        ]
     },
     {
         slug: 'diamonds',
@@ -84,21 +106,53 @@ export const projects: Project[] = [
     },
     {
         slug: 'mito-y-comadre',
-        name: 'Mito y comadre',
-        type: 'Branding',
-        role: 'Art Direction + Design',
+        name: 'Mito y Comadre',
+        type: 'Illustration',
+        role: 'Creative Direction + Illustration',
         client: 'ZZK Records - Mito y Comadre',
+        title: 'Mito y Comadre: European Tour Poster Design',
         summary: 'Guajirando European Tour - Poster Design',
-        image: '/projects/mito-y-comadre.webp'
+        description:
+            "Mito y Comadre's Guajirando Tour was much more than a standard concert series. It was an intense celebration of Colombian and Venezuelan roots and identity. As the creative director and illustrator for the project, my mission was to design a visual language that spoke as loudly and powerfully as their music.\n\n" +
+            'Inspired by psychedelic aesthetics and retro poster art, the project is built on vibrant colors, hypnotic gazes, and dynamic compositions. Each poster in the series acts as a window into a sensory journey, bridging the mysticism of the myth with the closeness of the comadre through a colorful, irreverent, and deeply magnetic illustrative style.',
+        image: '/projects/mito-y-comadre.webp',
+        hero: '/projects/mito-y-comadre/hero.webp',
+        year: '2025',
+        industry: 'Music & Culture',
+        creativeWork: ['Illustration', 'Creative Direction'],
+        gallery: [
+            '/projects/mito-y-comadre/poster-lyon.webp',
+            '/projects/mito-y-comadre/poster-barcelona.webp',
+            '/projects/mito-y-comadre/poster-paris.webp',
+            '/projects/mito-y-comadre/poster-general.webp'
+        ]
     },
     {
         slug: 'mon-rivera',
-        name: 'Mon rivera',
-        type: 'Branding',
-        role: 'Art Direction + Design',
+        name: 'Mon Rivera Meets Caribombo',
+        type: 'Illustration',
+        role: 'Creative Direction + Illustration',
         client: 'Galletas Calientes - Caribombo',
+        title: 'Mon Rivera Meets Caribombo | EP Vinil + Visualizer',
         summary: 'MON RIVERA Meets Caribombo - EP Vinil & Visualizer',
-        image: '/projects/mon-rivera.webp'
+        description:
+            "Mon Rivera was one of the pioneers who, ahead of many of salsa's biggest legends, arrived in New York and paved the way for the generation that followed. Lluvia con Nieve RMX bridges that legacy with Caribombo's current sound, delivering a remix that speaks to foundational salsa from a contemporary Afro-Caribbean identity.\n\n" +
+            'The project became a physical vinyl release, limited to just 25 units, created in collaboration with Caribombo and Galletas Calientes. I designed the full EP artwork, cover, back cover, tracklist, and animated visualizer, building an original illustrated world of landscape, character, and a recurring bee that carries through every piece, from the vinyl itself to the social media rollout.\n\n' +
+            'Note: the back cover credits Artwork by Alberto Olivero (Elbrto). Elbrto was my pseudonym until 2023, before rebranding as Papashongo.',
+        image: '/projects/mon-rivera.webp',
+        hero: '/projects/mon-rivera/hero.webp',
+        year: '2023',
+        industry: 'Music & Culture',
+        creativeWork: ['Graphic Design', 'Illustration', 'Creative Direction'],
+        gallery: [
+            { video: '/projects/mon-rivera/visualizer.mp4', poster: '/projects/mon-rivera/visualizer-poster.webp' },
+            '/projects/mon-rivera/vinyl.webp',
+            '/projects/mon-rivera/vinyl-hands.webp',
+            '/projects/mon-rivera/cover.webp',
+            '/projects/mon-rivera/back-cover.webp',
+            '/projects/mon-rivera/record-bin.webp',
+            '/projects/mon-rivera/facebook.webp'
+        ]
     },
     {
         slug: 'nuud-bites',
@@ -155,11 +209,29 @@ export const projects: Project[] = [
     },
     {
         slug: 'saavy',
-        name: 'saavy',
-        type: 'Identity',
-        role: 'Art Direction + Design',
+        name: 'Saavy',
+        type: 'Illustration',
+        role: 'Graphic Design + Illustration',
         client: 'Saavy Defi LLC',
-        summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
-        image: '/projects/saavy.webp'
+        title: 'Saavy: Web SaaS Illustrations',
+        summary: 'Custom Illustration System For A DeFi Credit Platform',
+        description:
+            'Complex credit protocols in the tech space often struggle to communicate their value clearly without sounding overly technical or dry. Saavy solves this by offering credit lines that do not require liquidation and automatically self-repay, allowing users to obtain funds without selling assets or worrying about periodic payments.\n\n' +
+            "Recently, I had the pleasure of collaborating with Saavy on their website, where I created several impactful and attractive illustrations. These custom illustrations were designed to do the heavy lifting, explaining complex mechanics and highlighting the platform's main advantages while giving the brand a friendly, distinct visual personality.\n\n" +
+            'Working on the Saavy project was a rewarding experience, allowing me to help convey innovative financial concepts through vibrant illustration. I am excited to continue collaborating with them on future projects and contribute to their ongoing growth.',
+        image: '/projects/saavy.webp',
+        hero: '/projects/saavy/hero.webp',
+        year: '2023',
+        industry: 'Tech / SaaS',
+        creativeWork: ['Graphic Design', 'Illustration'],
+        gallery: [
+            '/projects/saavy/landing.webp',
+            '/projects/saavy/features.webp',
+            '/projects/saavy/hands.webp',
+            '/projects/saavy/walking.webp',
+            ['/projects/saavy/calculator.webp', '/projects/saavy/handshake.webp'],
+            '/projects/saavy/vision-map.webp',
+            '/projects/saavy/banner.webp'
+        ]
     }
 ]

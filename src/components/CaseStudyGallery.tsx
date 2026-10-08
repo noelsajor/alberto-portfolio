@@ -1,10 +1,19 @@
 import Image from 'next/image'
-import type { GalleryItem } from '@/data/projects'
+import type { GalleryItem, GalleryVideo } from '@/data/projects'
 
-function Frame({ src, alt, priority = false }: { src: string; alt: string; priority?: boolean }) {
+function Frame({ src, alt }: { src: string; alt: string }) {
     return (
-        <div className="overflow-hidden border-[1.5px] border-dark bg-[#E5E3DD]">
-            <Image src={src} alt={alt} width={1600} height={1000} sizes="(min-width: 1152px) 1104px, 100vw" className="h-auto w-full" priority={priority} />
+        <div className="overflow-hidden bg-[#E5E3DD]">
+            <Image src={src} alt={alt} width={1600} height={1000} sizes="(min-width: 1152px) 1104px, 100vw" className="h-auto w-full" />
+        </div>
+    )
+}
+
+function VideoFrame({ video, poster }: GalleryVideo) {
+    return (
+        <div className="overflow-hidden bg-[#E5E3DD]">
+            {/* Muted + inline so it autoplays like a visualizer loop */}
+            <video src={video} poster={poster} autoPlay muted loop playsInline preload="metadata" className="h-auto w-full" />
         </div>
     )
 }
@@ -14,17 +23,19 @@ export function CaseStudyGallery({ items = [], projectName }: { items?: GalleryI
 
     return (
         <div className="space-y-6 md:space-y-8">
-            {items.map((item, i) =>
-                Array.isArray(item) ? (
-                    <div key={i} className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-                        {item.map((src, j) => (
-                            <Frame key={src} src={src} alt={`${projectName}, detail ${i + 1}.${j + 1}`} />
-                        ))}
-                    </div>
-                ) : (
-                    <Frame key={item} src={item} alt={`${projectName}, detail ${i + 1}`} />
-                )
-            )}
+            {items.map((item, i) => {
+                if (Array.isArray(item)) {
+                    return (
+                        <div key={i} className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+                            {item.map((src, j) => (
+                                <Frame key={src} src={src} alt={`${projectName}, detail ${i + 1}.${j + 1}`} />
+                            ))}
+                        </div>
+                    )
+                }
+                if (typeof item === 'object') return <VideoFrame key={item.video} {...item} />
+                return <Frame key={item} src={item} alt={`${projectName}, detail ${i + 1}`} />
+            })}
         </div>
     )
 }
