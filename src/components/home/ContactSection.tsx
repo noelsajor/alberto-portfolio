@@ -19,7 +19,7 @@ export function ContactSection() {
                     your project
                 </h2>
 
-                <div className="mx-auto mt-10 max-w-2xl border-[1.5px] border-dark bg-cream p-6 md:p-10">
+                <div className="mx-auto mt-10 max-w-2xl border-[1.5px] border-dark p-6 md:p-10">
                     <ContactForm />
                 </div>
             </div>

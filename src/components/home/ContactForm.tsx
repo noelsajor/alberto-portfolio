@@ -1,8 +1,7 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-
-const CONTACT_EMAIL = 'hello@albertoolivero.com'
+import { contactInfo } from '@/data/site'
 
 /**
  * Interim delivery: builds a mailto: link with the form content.
@@ -25,7 +24,7 @@ export function ContactForm() {
             .filter((l) => l !== null)
             .join('\n')
 
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+        window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
         setSent(true)
     }
 
