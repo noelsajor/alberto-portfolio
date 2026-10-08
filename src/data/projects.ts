@@ -20,7 +20,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Brand identity and visual language for Boosted.',
-        image: '/projects/Boosted.png'
+        image: '/projects/boosted.webp'
     },
     {
         slug: 'caribombo',
@@ -29,7 +29,7 @@ export const projects: Project[] = [
         role: 'Art Direction + Design',
         client: 'Caribombo - Carlos Guillen',
         summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
-        image: '/projects/Caribombo.png'
+        image: '/projects/caribombo.webp'
     },
     {
         slug: 'diamonds',
@@ -37,7 +37,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Identity and branding for Diamonds.',
-        image: '/projects/Diamonds.png'
+        image: '/projects/diamonds.webp'
     },
     {
         slug: 'fake-cover-day',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
         type: 'Illustration',
         role: 'Art Direction + Design',
         summary: 'Design and illustration for Fake Cover Day.',
-        image: '/projects/Fake Cover Day.png'
+        image: '/projects/fake-cover-day.webp'
     },
     {
         slug: 'la-lechona',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Branding and identity for La lechona.',
-        image: '/projects/La lechona.png'
+        image: '/projects/la-lechona.webp'
     },
     {
         slug: 'louder',
@@ -61,7 +61,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Visual identity for Louder.',
-        image: '/projects/Louder.png'
+        image: '/projects/louder.webp'
     },
     {
         slug: 'misa-afro',
@@ -69,7 +69,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Cultural project branding for Misa Afro.',
-        image: '/projects/Misa Afro.png'
+        image: '/projects/misa-afro.webp'
     },
     {
         slug: 'mito-y-comadre',
@@ -78,7 +78,7 @@ export const projects: Project[] = [
         role: 'Art Direction + Design',
         client: 'ZZK Records - Mito y Comadre',
         summary: 'Guajirando European Tour - Poster Design',
-        image: '/projects/Mito y comadre.png'
+        image: '/projects/mito-y-comadre.webp'
     },
     {
         slug: 'mon-rivera',
@@ -87,7 +87,7 @@ export const projects: Project[] = [
         role: 'Art Direction + Design',
         client: 'Galletas Calientes - Caribombo',
         summary: 'MON RIVERA Meets Caribombo - EP Vinil & Visualizer',
-        image: '/projects/Mon rivera.png'
+        image: '/projects/mon-rivera.webp'
     },
     {
         slug: 'nuud-bites',
@@ -96,7 +96,7 @@ export const projects: Project[] = [
         role: 'Art Direction + Design',
         client: 'NUUD Pleasures LLC',
         summary: 'Collectible Packaging For NUUD Exotics',
-        image: '/projects/Nuud Bites.png'
+        image: '/projects/nuud-bites.webp'
     },
     {
         slug: 'rincon',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
         type: 'Branding',
         role: 'Art Direction + Design',
         summary: 'Identity and design for Rincon.',
-        image: '/projects/Rincon.png'
+        image: '/projects/rincon.webp'
     },
     {
         slug: 'sticker',
@@ -112,7 +112,7 @@ export const projects: Project[] = [
         type: 'Sticker Pack',
         role: 'Art Direction + Design',
         summary: 'Sticker design and production.',
-        image: '/projects/Sticker .png'
+        image: '/projects/sticker.webp'
     },
     {
         slug: 'gig-posters',
@@ -120,7 +120,7 @@ export const projects: Project[] = [
         type: 'Illustration',
         role: 'Art Direction + Design',
         summary: 'Poster design and illustration.',
-        image: '/projects/gig Posters.png'
+        image: '/projects/gig-posters.webp'
     },
     {
         slug: 'saavy',
@@ -130,25 +130,25 @@ export const projects: Project[] = [
         client: 'Saavy Defi LLC',
         summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        image: '/projects/saavy.png',
+        image: '/projects/saavy.webp',
         year: '2025',
         industry: 'Lorem',
         creativeWork: ['Lorem ipsum', 'Lorem ipsum dolor', 'Lorem'],
         detailImages: [
-            '/projects/saavy.png',
-            '/projects/Louder.png',
-            '/projects/Boosted.png',
-            '/projects/Caribombo.png',
-            '/projects/Diamonds.png',
-            '/projects/Fake Cover Day.png',
-            '/projects/La lechona.png',
-            '/projects/Misa Afro.png',
-            '/projects/Mito y comadre.png',
-            '/projects/Mon rivera.png',
-            '/projects/Nuud Bites.png',
-            '/projects/Rincon.png',
-            '/projects/Sticker .png',
-            '/projects/gig Posters.png'
+            '/projects/saavy.webp',
+            '/projects/louder.webp',
+            '/projects/boosted.webp',
+            '/projects/caribombo.webp',
+            '/projects/diamonds.webp',
+            '/projects/fake-cover-day.webp',
+            '/projects/la-lechona.webp',
+            '/projects/misa-afro.webp',
+            '/projects/mito-y-comadre.webp',
+            '/projects/mon-rivera.webp',
+            '/projects/nuud-bites.webp',
+            '/projects/rincon.webp',
+            '/projects/sticker.webp',
+            '/projects/gig-posters.webp'
         ]
     }
 ]

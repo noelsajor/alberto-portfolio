@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { SocialLinks } from '@/components/icons/SocialIcons'
+import { LogoMark } from '@/components/Logo'
 
 const nav = [
     { href: '/work', label: 'work' },
@@ -28,8 +29,8 @@ export function SiteFooter() {
 
             {/* Bottom bar */}
             <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-10 md:flex-row md:items-center md:justify-between">
-                <Link href="/" className="display text-xl text-accent" aria-label="Papashongo, home">
-                    Papashongo
+                <Link href="/" className="inline-flex items-center text-accent" aria-label="Papashongo, home">
+                    <LogoMark className="h-6 w-auto md:h-7" />
                 </Link>
                 <div className="flex flex-wrap items-center gap-6">
                     {nav.map((item, i) => (

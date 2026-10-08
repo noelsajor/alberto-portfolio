@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 py-16 md:grid-cols-[1fr_2fr] md:gap-16 md:py-24 lg:grid-cols-[1fr_1.6fr]">
                     <div className="flex md:justify-center">
                         <div className="flex h-32 w-32 items-center justify-center rounded-full border-[1.5px] border-dark bg-accent md:h-40 md:w-40">
-                            <Image src="/avatar.png" alt="Papashongo mascot" width={110} height={110} className="w-[62%]" />
+                            <Image src="/avatar.webp" alt="Papashongo mascot" width={110} height={110} className="w-[62%]" />
                         </div>
                     </div>
 

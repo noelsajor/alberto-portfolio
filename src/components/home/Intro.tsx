@@ -8,7 +8,7 @@ export function Intro() {
                 {/* Mascot */}
                 <div className="flex md:justify-center">
                     <div className="flex h-36 w-36 items-center justify-center rounded-full border-[1.5px] border-dark bg-accent md:h-44 md:w-44">
-                        <Image src="/avatar.png" alt="Papashongo mascot" width={120} height={120} className="w-[62%]" />
+                        <Image src="/avatar.webp" alt="Papashongo mascot" width={120} height={120} className="w-[62%]" />
                     </div>
                 </div>
 

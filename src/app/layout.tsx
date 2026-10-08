@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     'Visual identities impossible to scroll past for brands that refuse to look boring. Brand design, illustration, packaging and motion by Alberto Olivero.',
   icons: {
-    icon: '/avatar.png',
+    icon: '/avatar.webp',
   },
 }
 
