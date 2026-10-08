@@ -1,20 +1,42 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-accent: #D4FF00;
-  --color-dark: #1a1a1a;
-  --color-muted: #666666;
-  --color-border: #e5e5e5;
-  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --color-accent: #E3EE45;
+  --color-cream: #F5F3EE;
+  --color-dark: #1D1D1B;
+  --color-muted: #6B6B66;
+  --color-border: #E5E3DD;
+  /* Tag palette (Services chips) */
+  --color-tag-yellow: #E3EE45;
+  --color-tag-pink: #F7A8C4;
+  --color-tag-green: #9FE1A4;
+  --color-tag-blue: #9FD0F5;
+  --color-tag-orange: #F9B36B;
+  --color-tag-purple: #C9A8F5;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-archivo-black), var(--font-archivo), Impact, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #ffffff;
-  color: #1a1a1a;
+  background: var(--color-cream);
+  color: var(--color-dark);
   font-family: var(--font-sans);
 }
 
-/* Hero highlight */
+/* Display headings */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* Hero highlight (kept for inner pages) */
 .hero-highlight {
   background-color: var(--color-accent);
   padding: 0 0.15em;
@@ -23,11 +45,43 @@ body {
   -webkit-box-decoration-break: clone;
 }
 
-/* Project grid — masonry-like layout */
+/* Buttons */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  border: 1.5px solid var(--color-dark);
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-accent:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--color-dark);
+}
+
+/* Chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--color-dark);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-dark);
+}
+
+/* Project grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -43,25 +97,38 @@ body {
 }
 
 .project-card {
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+.project-card .thumb {
+  overflow: hidden;
+  background: #E5E3DD;
 }
 
 .project-card img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 12px;
   transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
   transform: scale(1.03);
+}
+
+/* Contact form */
+.field {
+  width: 100%;
+  background: #FFF4CF;
+  border: 1.5px solid var(--color-dark);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+  outline: none;
+}
+
+.field:focus {
+  box-shadow: 3px 3px 0 var(--color-dark);
 }
 
 /* CTA section */
@@ -75,12 +142,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 28px;
+  height: 28px;
+  color: var(--color-dark);
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .social-icon:hover {
-  opacity: 0.7;
-  transform: translateY(-2px);
+  opacity: 0.6;
+  transform: translateY(-1px);
 }

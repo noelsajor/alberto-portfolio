@@ -1,44 +1,50 @@
 import Link from 'next/link'
+import { SocialLinks } from '@/components/icons/SocialIcons'
+
+const nav = [
+    { href: '/work', label: 'work' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' }
+]
 
 export function SiteFooter() {
     return (
-        <footer>
-            {/* CTA Section */}
-            <section className="cta-section">
-                <div className="mx-auto max-w-6xl px-6 py-20">
-                    <h2 className="max-w-2xl text-5xl font-black leading-[1.05] tracking-tight uppercase md:text-7xl">
-                        LETS BUILD<br />
-                        GREAT THINGS<br />
-                        TOGETHER
-                    </h2>
-                    <div className="mt-8">
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center justify-center bg-accent px-5 py-2 text-sm font-bold text-dark transition hover:opacity-90"
-                        >
-                            Lets Talk! &gt;
-                        </Link>
-                    </div>
+        <footer className="cta-section">
+            {/* CTA */}
+            <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+                <h2 className="display max-w-2xl text-5xl md:text-6xl lg:text-7xl">
+                    Lets build
+                    <br />
+                    great things
+                    <br />
+                    together
+                </h2>
+                <div className="mt-8">
+                    <Link href="/#contact" className="btn-accent text-sm px-5 py-2.5">
+                        Lets Talk! &gt;
+                    </Link>
                 </div>
             </section>
 
             {/* Bottom bar */}
-            <div className="bg-black text-white/50">
-                <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-xs md:flex-row md:items-center md:justify-between">
-                    <Link href="/" className="text-sm font-normal text-white">
-                        Alberto <span className="font-bold text-accent">Olivero</span>
-                    </Link>
-                    <div className="flex flex-wrap gap-10">
-                        <Link className="text-accent text-sm font-bold transition hover:text-white" href="/work">
-                            work
+            <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-10 md:flex-row md:items-center md:justify-between">
+                <Link href="/" className="display text-xl text-accent" aria-label="Papashongo, home">
+                    Papashongo
+                </Link>
+                <div className="flex flex-wrap items-center gap-6">
+                    {nav.map((item, i) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            className={[
+                                'text-sm transition hover:text-white',
+                                i === 0 ? 'font-bold text-white' : 'font-medium text-white/60'
+                            ].join(' ')}
+                        >
+                            {item.label}
                         </Link>
-                        <Link className="text-white/60 text-sm font-medium transition hover:text-white" href="/about">
-                            About
-                        </Link>
-                        <Link className="text-white/60 text-sm font-medium transition hover:text-white" href="/contact">
-                            Contact
-                        </Link>
-                    </div>
+                    ))}
+                    <SocialLinks className="text-white [&_.social-icon]:text-white" />
                 </div>
             </div>
         </footer>

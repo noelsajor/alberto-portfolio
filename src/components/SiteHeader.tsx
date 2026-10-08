@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { Logo } from '@/components/Logo'
+import { SocialLinks } from '@/components/icons/SocialIcons'
 
 const nav = [
     { href: '/work', label: 'work' },
@@ -19,8 +21,8 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
             href={href}
             onClick={onClick}
             className={[
-                'text-sm font-medium transition-colors',
-                active ? 'text-accent' : 'text-dark/70 hover:text-dark'
+                'text-sm transition-colors',
+                active ? 'font-bold text-dark' : 'font-medium text-dark/60 hover:text-dark'
             ].join(' ')}
         >
             {label}
@@ -38,24 +40,29 @@ export function SiteHeader() {
     }, [])
 
     return (
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-                <Link href="/" className="text-base font-normal tracking-tight text-dark">
-                    Alberto <span className="font-bold">Olivero</span>
-                </Link>
+        <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur">
+            <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+                <Logo />
 
                 {/* Desktop nav */}
-                <nav className="hidden items-center gap-8 md:flex">
+                <nav className="hidden items-center gap-7 md:flex">
                     {nav.map((item) => (
                         <NavLink key={item.href} href={item.href} label={item.label} />
                     ))}
                 </nav>
 
+                <div className="hidden items-center gap-5 md:flex">
+                    <SocialLinks />
+                    <Link href="/#contact" className="btn-accent">
+                        Lets Start Your Project
+                    </Link>
+                </div>
+
                 {/* Mobile button */}
                 <button
                     type="button"
                     onClick={() => setOpen((v) => !v)}
-                    className="md:hidden rounded-md border border-dark/15 bg-dark/5 px-3 py-2 text-sm font-semibold text-dark transition hover:bg-dark/10 focus:outline-none focus:ring-2 focus:ring-dark/30"
+                    className="md:hidden border-[1.5px] border-dark px-3 py-2 text-xs font-bold text-dark"
                     aria-expanded={open}
                     aria-controls="mobile-menu"
                 >
@@ -63,20 +70,17 @@ export function SiteHeader() {
                 </button>
             </div>
 
-            {/* Divider line */}
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="border-t border-dark/10" />
-            </div>
-
             {/* Mobile menu */}
             {open ? (
-                <div id="mobile-menu" className="border-t border-dark/10 bg-white md:hidden">
-                    <div className="mx-auto max-w-6xl px-6 py-4">
-                        <div className="flex flex-col gap-4">
-                            {nav.map((item) => (
-                                <NavLink key={item.href} href={item.href} label={item.label} onClick={() => setOpen(false)} />
-                            ))}
-                        </div>
+                <div id="mobile-menu" className="border-t border-dark/10 bg-cream md:hidden">
+                    <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-5">
+                        {nav.map((item) => (
+                            <NavLink key={item.href} href={item.href} label={item.label} onClick={() => setOpen(false)} />
+                        ))}
+                        <SocialLinks />
+                        <Link href="/#contact" onClick={() => setOpen(false)} className="btn-accent w-fit">
+                            Lets Start Your Project
+                        </Link>
                     </div>
                 </div>
             ) : null}
