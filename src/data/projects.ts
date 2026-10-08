@@ -27,7 +27,8 @@ export const projects: Project[] = [
         name: 'Caribombo',
         type: 'Branding',
         role: 'Art Direction + Design',
-        summary: 'Visual identity design for Caribombo.',
+        client: 'Caribombo - Carlos Guillen',
+        summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
         image: '/projects/Caribombo.png'
     },
     {
@@ -75,7 +76,8 @@ export const projects: Project[] = [
         name: 'Mito y comadre',
         type: 'Branding',
         role: 'Art Direction + Design',
-        summary: 'Identity design for Mito y comadre.',
+        client: 'ZZK Records - Mito y Comadre',
+        summary: 'Guajirando European Tour - Poster Design',
         image: '/projects/Mito y comadre.png'
     },
     {
@@ -83,7 +85,8 @@ export const projects: Project[] = [
         name: 'Mon rivera',
         type: 'Branding',
         role: 'Art Direction + Design',
-        summary: 'Tribute branding for Mon rivera.',
+        client: 'Galletas Calientes - Caribombo',
+        summary: 'MON RIVERA Meets Caribombo - EP Vinil & Visualizer',
         image: '/projects/Mon rivera.png'
     },
     {
@@ -91,7 +94,8 @@ export const projects: Project[] = [
         name: 'Nuud Bites',
         type: 'Packaging',
         role: 'Art Direction + Design',
-        summary: 'Packaging design for Nuud Bites.',
+        client: 'NUUD Pleasures LLC',
+        summary: 'Collectible Packaging For NUUD Exotics',
         image: '/projects/Nuud Bites.png'
     },
     {
@@ -123,11 +127,11 @@ export const projects: Project[] = [
         name: 'saavy',
         type: 'Identity',
         role: 'Art Direction + Design',
-        summary: 'Identity design for saavy.',
+        client: 'Saavy Defi LLC',
+        summary: 'Visual Identity & Press Kit For Womex 2023 Selection',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         image: '/projects/saavy.png',
         year: '2025',
-        client: 'Lorem ipsum',
         industry: 'Lorem',
         creativeWork: ['Lorem ipsum', 'Lorem ipsum dolor', 'Lorem'],
         detailImages: [
