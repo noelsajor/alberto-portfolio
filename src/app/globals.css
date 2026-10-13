@@ -187,6 +187,11 @@ a.chip:hover {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+/* Unlayered rules beat Tailwind utilities, so the dark CTA/footer variant lives here too */
+.cta-section .social-icon {
+  color: #ffffff;
+}
+
 .social-icon:hover {
   opacity: 0.6;
   transform: translateY(-1px);
