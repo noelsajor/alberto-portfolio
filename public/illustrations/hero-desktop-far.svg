@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke-width: 3.53px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-53, .cls-29, .cls-30, .cls-54, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52 {
+        stroke: #434337;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52 {
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-19, .cls-20, .cls-21, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52 {
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        stroke-width: 3.55px;
+      }
+
+      .cls-4 {
+        stroke-width: 11.52px;
+      }
+
+      .cls-5, .cls-25 {
+        stroke-width: 2.88px;
+      }
+
+      .cls-6 {
+        stroke-width: 2.63px;
+      }
+
+      .cls-7, .cls-40 {
+        stroke-width: 3px;
+      }
+
+      .cls-8 {
+        stroke-width: 3.01px;
+      }
+
+      .cls-9, .cls-38 {
+        stroke-width: 3.03px;
+      }
+
+      .cls-10, .cls-39 {
+        stroke-width: 3.04px;
+      }
+
+      .cls-11 {
+        stroke-width: 3px;
+      }
+
+      .cls-12, .cls-32 {
+        stroke-width: 3.02px;
+      }
+
+      .cls-13 {
+        stroke-width: 3.01px;
+      }
+
+      .cls-14 {
+        stroke-width: 3.02px;
+      }
+
+      .cls-15 {
+        stroke-width: 1.56px;
+      }
+
+      .cls-15, .cls-16, .cls-17, .cls-18, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-53, .cls-29, .cls-30, .cls-54, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-16 {
+        stroke-width: 1.79px;
+      }
+
+      .cls-18, .cls-45 {
+        stroke-width: 2px;
+      }
+
+      .cls-19 {
+        stroke-width: 1.88px;
+      }
+
+      .cls-20 {
+        stroke-width: 1.91px;
+      }
+
+      .cls-23 {
+        stroke-width: 4.32px;
+      }
+
+      .cls-24 {
+        stroke-width: 2.86px;
+      }
+
+      .cls-26 {
+        stroke-width: 2.64px;
+      }
+
+      .cls-27 {
+        stroke-width: 2.43px;
+      }
+
+      .cls-28 {
+        stroke-width: 3.07px;
+      }
+
+      .cls-53 {
+        fill: #1d1d1b;
+      }
+
+      .cls-29 {
+        stroke-width: 3.02px;
+      }
+
+      .cls-30 {
+        stroke-width: 1.96px;
+      }
+
+      .cls-55 {
+        font-family: BaksoSapi, 'Bakso Sapi';
+        font-size: 5.74px;
+      }
+
+      .cls-55, .cls-56 {
+        fill: #434337;
+      }
+
+      .cls-57 {
+        fill: #fff;
+      }
+
+      .cls-31 {
+        stroke-width: 4px;
+      }
+
+      .cls-33 {
+        stroke-width: 2.68px;
+      }
+
+      .cls-34 {
+        stroke-width: 2.73px;
+      }
+
+      .cls-35 {
+        stroke-width: 2.57px;
+      }
+
+      .cls-36 {
+        stroke-width: 2.53px;
+      }
+
+      .cls-37 {
+        stroke-width: 3.2px;
+      }
+
+      .cls-41 {
+        stroke-width: 2.11px;
+      }
+
+      .cls-42 {
+        stroke-width: 2.11px;
+      }
+
+      .cls-43 {
+        stroke-width: 2.02px;
+      }
+
+      .cls-44 {
+        stroke-width: 2.03px;
+      }
+
+      .cls-46 {
+        stroke-width: .84px;
+      }
+
+      .cls-47 {
+        stroke-width: .83px;
+      }
+
+      .cls-48 {
+        stroke-width: .86px;
+      }
+
+      .cls-49 {
+        stroke-width: 1.07px;
+      }
+
+      .cls-50 {
+        stroke-width: 1.16px;
+      }
+
+      .cls-51 {
+        stroke-width: .65px;
+      }
+
+      .cls-52 {
+        stroke-width: 1.68px;
+      }
+    </style>
+    </defs>
+  <path id="backing-far" fill="#f5f3ee" transform="scale(0.5) translate(0.000000,2048.000000) scale(0.100000,-0.100000)" d="M26880 10745 c-740 -151 -872 -1151 -195 -1480 704 -343 1425 456 1010 1120 -172 275 -507 423 -815 360z M25140 9059 c-31 -81 -70 -121 -148 -149 -78 -28 -77 -43 3 -75 71 -29 115 -73 140 -141 33 -89 50 -91 74 -10 19 65 74 122 146 151 67 27 82 51 38 61 -96 23 -150 72 -184 165 -27 75 -41 74 -69 -2z M24932 8523 c-18 -9 -40 -29 -48 -45 l-15 -28 381 0 380 0 0 45 0 45 -332 0 c-287 0 -338 -3 -366 -17z M18755 8219 c-531 -82 -834 -647 -601 -1122 313 -641 1230 -576 1457 103 178 535 -301 1106 -856 1019z M21171 6801 c-26 -71 -86 -130 -154 -152 -57 -18 -55 -29 13 -56 67 -27 118 -81 144 -151 20 -58 32 -65 42 -24 20 83 73 142 160 177 72 29 72 32 7 55 -88 31 -173 128 -173 197 0 31 -19 9 -39 -46z"/>
+  <circle class="cls-57" cx="1351.29" cy="525.17" r="42.62"/>
+  <path class="cls-56" d="M1071.69,693.89c-6.55,1.77-8.88,4.1-10.65,10.65-.3,1.11-1.88,1.11-2.18,0-1.77-6.55-4.1-8.88-10.65-10.65-1.11-.3-1.11-1.88,0-2.18,6.55-1.77,8.88-4.1,10.65-10.65.3-1.11,1.88-1.11,2.18,0,1.77,6.55,4.1,8.88,10.65,10.65,1.11.3,1.11,1.88,0,2.18Z"/>
+  <path class="cls-54" d="M1270.44,581.5c-6.55,1.77-8.88,4.1-10.65,10.65-.3,1.11-1.88,1.11-2.18,0-1.77-6.55-4.1-8.88-10.65-10.65-1.11-.3-1.11-1.88,0-2.18,6.55-1.77,8.88-4.1,10.65-10.65.3-1.11,1.88-1.11,2.18,0,1.77,6.55,4.1,8.88,10.65,10.65,1.11.3,1.11,1.88,0,2.18Z"/>
+  <circle class="cls-9" cx="943.07" cy="652.16" r="38.52"/>
+  <circle class="cls-56" cx="967.54" cy="664.14" r="3.86"/>
+  <circle class="cls-56" cx="942.95" cy="664.14" r="3.86"/>
+  <path class="cls-56" d="M955.33,680.74c-4.7,0-8.7-2.97-10.24-7.13-.68-1.83.7-3.78,2.65-3.78h15.18c1.95,0,3.33,1.95,2.65,3.78-1.54,4.16-5.54,7.13-10.24,7.13Z"/>
+  <path class="cls-56" d="M928.42,657.43c1.9.51,2.57,1.19,3.08,3.08.09.32.54.32.63,0,.51-1.9,1.19-2.57,3.08-3.08.32-.09.32-.54,0-.63-1.9-.51-2.57-1.19-3.08-3.08-.09-.32-.54-.32-.63,0-.51,1.9-1.19,2.57-3.08,3.08-.32.09-.32.54,0,.63Z"/>
+  <path class="cls-9" d="M1389.9,525.47c0,21.27-17.24,38.52-38.52,38.52-21.27,0-38.52-17.24-38.52-38.52s17.24-38.52,38.52-38.52c21.27,0,38.52,17.24,38.52,38.52Z"/>
+  <path class="cls-56" d="M1330.77,537.45c0,2.13-1.73,3.86-3.86,3.86s-3.86-1.73-3.86-3.86,1.73-3.86,3.86-3.86,3.86,1.73,3.86,3.86Z"/>
+  <circle class="cls-56" cx="1351.5" cy="537.45" r="3.86"/>
+  <path class="cls-56" d="M1339.11,554.04c4.7,0,8.7-2.97,10.24-7.13.68-1.83-.7-3.78-2.65-3.78h-15.18c-1.95,0-3.33,1.95-2.65,3.78,1.54,4.16,5.54,7.13,10.24,7.13Z"/>
+  <path class="cls-56" d="M1366.03,530.74c-1.9.51-2.57,1.19-3.08,3.08-.09.32-.54.32-.63,0-.51-1.9-1.19-2.57-3.08-3.08-.32-.09-.32-.54,0-.63,1.9-.51,2.57-1.19,3.08-3.08.09-.32.54-.32.63,0,.51,1.9,1.19,2.57,3.08,3.08.32.09.32.54,0,.63Z"/>
+</svg>

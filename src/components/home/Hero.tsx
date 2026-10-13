@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { HeroIllustration } from '@/components/home/HeroIllustration'
 
 export function Hero() {
     return (
@@ -16,15 +17,7 @@ export function Hero() {
             </div>
 
             {/* Illustration: desktop version has empty space at the top for the copy */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-                src="/illustrations/hero-desktop.svg"
-                alt="Illustrated studio desk of Papashongo with a character drawing at a computer, surrounded by posters, plants and a fan"
-                width={1440}
-                height={1024}
-                className="hidden w-full md:-mt-[23%] md:block lg:-mt-[26%]"
-                fetchPriority="high"
-            />
+            <HeroIllustration />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
                 src="/illustrations/hero-mobile.svg"
