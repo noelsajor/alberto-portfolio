@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useParallaxY } from '@/lib/useParallaxY'
 
@@ -80,6 +80,9 @@ const LEFT_LENS =
 const RIGHT_LENS =
     'M692.42,724.76l-28.22.62c-1.41.03-2.38,1.47-1.84,2.77,1.68,4.13,6.04,11.44,15.63,10.91s14.17-7.29,16.29-11.35c.71-1.36-.31-2.99-1.85-2.96Z'
 
+// The glint renders once per page, so a fixed id is unique and identical on server and client
+const LENS_CLIP_ID = 'hero-lens-clip'
+
 // How many times the reflection crosses the lenses while they travel up the viewport
 const GLINT_SWEEPS = 4
 
@@ -87,8 +90,6 @@ const GLINT_SWEEPS = 4
 // lenses scroll from 95% to 15% of the viewport height. Clipped to the lenses, so it is
 // only visible while crossing them; each sweep restarts off-lens, so the wrap never shows.
 function LensGlint() {
-    // useId output contains characters that are awkward inside url(#...), so keep it alphanumeric
-    const clipId = `lens-clip-${useId().replace(/[^a-zA-Z0-9]/g, '')}`
     const lensRef = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({ target: lensRef, offset: ['start 0.95', 'start 0.15'] })
     const glintX = useTransform(scrollYProgress, (p) => ((p * GLINT_SWEEPS) % 1) * 100)
@@ -103,12 +104,12 @@ function LensGlint() {
                 aria-hidden="true"
             >
                 <defs>
-                    <clipPath id={clipId}>
+                    <clipPath id={LENS_CLIP_ID}>
                         <path d={LEFT_LENS} />
                         <path d={RIGHT_LENS} />
                     </clipPath>
                 </defs>
-                <g clipPath={`url(#${clipId})`}>
+                <g clipPath={`url(#${LENS_CLIP_ID})`}>
                     <motion.g style={{ x: glintX }} fill="#fff">
                         <polygon points="614,720 620,720 610,744 604,744" />
                         <polygon points="623,720 625.5,720 615.5,744 613,744" />
