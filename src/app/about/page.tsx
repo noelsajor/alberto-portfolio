@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ServiceTags, IndustryTags } from '@/components/Tags'
+import { AboutHeroLine, AboutIllustration } from '@/components/about/AboutHeroArt'
 
 export const metadata = {
     title: 'About — Papashongo',
@@ -14,13 +15,7 @@ export default function AboutPage() {
             {/* Hero */}
             <section className="relative">
                 {/* Background line */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/lines/hero.svg"
-                    alt=""
-                    aria-hidden="true"
-                    className="pointer-events-none absolute left-1/2 top-0 hidden w-[1440px] max-w-none -translate-x-1/2 select-none md:block"
-                />
+                <AboutHeroLine />
 
                 <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 pt-10 pb-6 md:grid-cols-[1.1fr_1fr] md:gap-8 md:pt-16 md:pb-10">
                     <div className="md:pl-8">
@@ -44,15 +39,7 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src="/illustrations/about.svg"
-                        alt="Papashongo character dancing surrounded by smiling faces"
-                        width={617}
-                        height={626}
-                        className="mx-auto w-full max-w-md md:max-w-none"
-                        fetchPriority="high"
-                    />
+                    <AboutIllustration />
                 </div>
             </section>
 
