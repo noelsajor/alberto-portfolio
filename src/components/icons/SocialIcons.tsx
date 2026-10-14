@@ -27,9 +27,9 @@ export function LinkedInIcon({ size = 20, className }: IconProps) {
 }
 
 export const socialLinks = {
-    behance: 'https://www.behance.net/albertoolivero',
-    instagram: 'https://www.instagram.com/papashongo',
-    linkedin: 'https://www.linkedin.com/in/albertoolivero'
+    behance: 'https://www.behance.net/Papashongo_',
+    instagram: 'https://www.instagram.com/papashongo_',
+    linkedin: 'https://www.linkedin.com/in/papashongo/'
 }
 
 export function SocialLinks({ className = '' }: { className?: string }) {
