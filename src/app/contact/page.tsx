@@ -21,7 +21,14 @@ export default function ContactPage() {
             <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 pt-14 pb-24 md:grid-cols-[1fr_1.15fr] md:gap-16 md:pt-20 md:pb-32">
                 {/* Left: title + direct contact */}
                 <div className="flex flex-col justify-between gap-12">
-                    <h1 className="display text-5xl md:text-6xl">Contact me</h1>
+                    <div>
+                        <h1 className="display text-balance text-4xl md:text-5xl">
+                            Ready to build something impossible to ignore?
+                        </h1>
+                        <p className="mt-5 max-w-md text-pretty text-base leading-relaxed text-dark/80 md:text-lg">
+                            Drop your details, timeline, and goals below. Let&rsquo;s make it count.
+                        </p>
+                    </div>
 
                     <address className="space-y-6 not-italic">
                         <a

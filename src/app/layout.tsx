@@ -21,7 +21,7 @@ const archivoBlack = Archivo_Black({
 export const metadata: Metadata = {
   title: 'Papashongo — Alberto Olivero',
   description:
-    'Visual identities impossible to scroll past for brands that refuse to look boring. Brand design, illustration, packaging and motion by Alberto Olivero.',
+    'Visual identities for brands that refuse to blend in. Brand design, illustration, packaging and motion by Alberto Olivero.',
   icons: {
     icon: '/avatar.webp',
   },

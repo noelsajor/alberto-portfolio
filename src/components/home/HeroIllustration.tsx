@@ -22,7 +22,7 @@ export function HeroIllustration() {
     const layerClass = 'absolute top-0 left-0 h-auto w-full will-change-transform'
 
     return (
-        <div className="relative hidden md:-mt-[31%] md:block lg:-mt-[34%]">
+        <div className="relative hidden md:-mt-[calc(31%_-_5rem)] md:block lg:-mt-[calc(34%_-_5rem)]">
             <motion.img
                 src="/illustrations/hero-desktop-strip.svg"
                 alt=""
